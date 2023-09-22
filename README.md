@@ -1,44 +1,40 @@
-# Thales Open Source Template Project
+# Distortion Aware Radial Swin Transformer
 
-Template for creating a new project in the [Thales GitHub organization](https://github.com/ThalesGroup).
 
-Each Thales OSS project repository **MUST** contain the following files at the root:
+This repo is the official implementation of ["DarSwin : Distortion Aware Radial Swin Transformer"](https://arxiv.org/pdf/2103.14030.pdf). It currently includes code and models for the following tasks:
 
-- a `LICENSE` which has been chosen in accordance with legal department depending on your needs
+> **Image Classification**: Included in this repo. See [get_started.md](get_started.md) for a quick start.
 
-- a `README.md` outlining the project goals, sponsoring sig, and community contact information, [GitHub tips about README.md](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-readmes)
 
-- a `CONTRIBUTING.md` outlining how to contribute to the project, how to submit a pull request and an issue
 
-- a `SECURITY.md` outlining how the security concerns are handled, [GitHub tips about SECURITY.md](https://docs.github.com/en/github/managing-security-vulnerabilities/adding-a-security-policy-to-your-repository)
+## Introduction
 
-Below is an example of the common structure and information expected in a README.
+**Distortion Aware Radial Swin Transformer** (DarSwin) is initially described in [arxiv](https://arxiv.org/abs/2304.09691), which is a backbone based on Swin Transformer of distortion aware network for wide-angle image classification. The distortion-aware radial patches enable a better generalization to unseen lenses. 
 
-**Please keep this structure as is and only fill the content for each section according to your project.**
 
-If you need assistance or have question, please contact oss@thalesgroup.com
 
-## Get started
+![teaser](figures/teaser.png)
 
-XXX project purpose it to ...
+## Main Results on ImageNet2010
 
-**Please also add the description into the About section (Description field)**
+Top-1 classification accuracy (mean) as a function of test distortion for our method (DarSwin-A) and previous state of the art: Deformable Attention Transformer (DAT), Swin Transformer, and Swin Transformer + undistortion (see text). All methods are trained on a restricted set of lens distortion curves (indicated by the pink shaded regions): (a) Very low, (b) low, (c) medium and (d) high distortion. We observe zero-shot adaptation to lens distortion of each approach by testing across all $\xi \in [0, 1]$.
 
-## Documentation
+![teaser](figures/main_results.png)
 
-Documentation is available at [xxx/docs](https://xxx/docs/).
+## Citing DarSwin Transformer
 
-You can use [GitHub pages](https://guides.github.com/features/pages/) to create your documentation.
+```
+@article{athwale2023darswin,
+    title={DarSwin : Distortion Aware Radial Swin Transformer},
+    author={Athwale, Akshaya and Afrasiyabi, Arman and Lagüe, Justin and Shili, Ichrak and Ahmad, Ola and Lalonde, Jean-Fran{\c{c}}ois},
+    journal={IEEE/CVF International Conference on Computer Vision (ICCV)},
+    year={2023}
+  }  
 
-See an example here : https://github.com/ThalesGroup/ThalesGroup.github.io
+```
 
-**Please also add the documentation URL into the About section (Website field)**
+## Getting Started
 
-## Contributing
+- For **Image Classification**, please see [get_started.md](get_started.md) for detailed instructions.
 
-If you are interested in contributing to the XXX project, start by reading the [Contributing guide](/CONTRIBUTING.md).
 
-## License
-
-The chosen license in accordance with legal department must be defined into an explicit [LICENSE](https://github.com/ThalesGroup/template-project/blob/master/LICENSE) file at the root of the repository
-You can also link this file in this README section.
