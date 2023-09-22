@@ -1,0 +1,18 @@
+MODEL:
+  TYPE: swin_radial
+  NAME: one_distortion_swin_small_patch2_window4_64_gp2_radial
+  DROP_PATH_RATE: 0.2
+  NRADIUS: 10
+  NAZIMUTH: 10
+  SWIN:
+    EMBED_DIM: 96
+    DEPTHS: [ 2, 2, 18, 2 ]
+    NUM_HEADS: [ 3, 6, 12, 24 ]
+    RADIUS_CUTS: 16
+    AZIMUTH_CUTS: 64
+  SWINAZ:
+    WINDOW_SIZE: (1,16)
+DATA:
+  DA: True
+  high: 0.2
+  low: 0.35

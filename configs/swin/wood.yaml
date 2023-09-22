@@ -1,0 +1,10 @@
+MODEL:
+  TYPE: swin_az
+  NAME: wood
+  DROP_PATH_RATE: 0.2
+  SWIN:
+    EMBED_DIM: 3
+    DEPTHS: [ 2, 2, 18, 2 ]
+    NUM_HEADS: [ 3, 6, 12, 24 ]
+  SWINAZ:
+    WINDOW_SIZE: (1, 16)
