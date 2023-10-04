@@ -111,10 +111,10 @@ python -m torch.distributed.launch --nproc_per_node 1 --master_port 12345 main.p
 
 ### checkpoints 
 - Different levels of distoriton has different checkpoint file, they can be found at TBD
-  -  gp1 : Very Low distorted
-  -  gp2 : Low distorted
-  -  gp3 : Medium distorted
-  -  gp4 : High distorted
+  -  gp1 : Very Low distorted : https://hdrdb-public.s3.valeria.science/darswin/gp1/ckpt_epoch_325.pth
+  -  gp2 : Low distorted : https://hdrdb-public.s3.valeria.science/darswin/gp2/ckpt_epoch_325.pth
+  -  gp3 : Medium distorted : https://hdrdb-public.s3.valeria.science/darswin/gp3/ckpt_epoch_325.pth
+  -  gp4 : High distorted : https://hdrdb-public.s3.valeria.science/darswin/gp4/ckpt_epoch_325.pth
 
 
 To train a `DarSwin Transformer` on ImageNet from scratch, run:
