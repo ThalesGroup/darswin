@@ -114,7 +114,7 @@ def build_dataset(is_train, config,xi=None):
         else:
             root = os.path.join(config.DATA.DATA_PATH, prefix)
             dataset = datasets.ImageFolder(root, transform=transform)
-        nb_classes = 200
+        nb_classes = config.MODEL.NUM_CLASSES
     elif config.DATA.DATASET == 'imagenet22K':
         prefix = 'ILSVRC2011fall_whole'
         if is_train:
@@ -122,18 +122,18 @@ def build_dataset(is_train, config,xi=None):
         else:
             ann_file = prefix + "_map_val.txt"
         dataset = IN22KDATASET(config.DATA.DATA_PATH, ann_file, transform)
-        nb_classes = 21841
+        nb_classes = config.MODEL.NUM_CLASSES
     elif config.DATA.DATASET == 'distort':
         if config.DATA.TASK is None:
             if is_train:
                 dataset = M_distort(config.DATA.DATA_PATH, config.MODEL.DISTORTION, config.DATA.low, config.DATA.high, xi=config.MODEL.XI, xi_bool = config.MODEL.XI_BOOL, DA = config.DATA.DA, task = 'train', transform = transform)
-                nb_classes = 200
+                nb_classes = config.MODEL.NUM_CLASSES
             else:
                 dataset = M_distort(config.DATA.DATA_PATH, config.MODEL.DISTORTION, config.DATA.low, config.DATA.high, xi=config.MODEL.XI, xi_bool = config.MODEL.XI_BOOL, DA = config.DATA.DA, task = 'val', transform = transform)
-                nb_classes = 200
+                nb_classes = config.MODEL.NUM_CLASSES
         else:
             dataset = M_distort(config.DATA.DATA_PATH, config.MODEL.DISTORTION, config.DATA.low, config.DATA.high, xi=config.MODEL.XI, xi_bool = config.MODEL.XI_BOOL, DA = config.DATA.DA, task = config.DATA.TASK, transform = transform)
-            nb_classes = 200
+            nb_classes = config.MODEL.NUM_CLASSES
     elif config.DATA.DATASET == 'woodscapes':
         if is_train:
             dataset = Woodscape(config.DATA.DATA_PATH, config.MODEL.DISTORTION, config.DATA.low, config.DATA.high, task = 'train', transform = transform)
