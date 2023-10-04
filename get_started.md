@@ -1,4 +1,4 @@
-# Swin Transformer for Image Classification
+# DarSwin Transformer for Image Classification
 
 This folder contains the implementation of the DarSwin Transformer for image classification.
 
@@ -12,14 +12,14 @@ nvidia: https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch.
 - Clone this repo:
 
 ```bash
-git clone https://github.com/microsoft/Swin-Transformer.git
-cd Swin-Transformer
+git clone https://github.com/ThalesGroup/darswin.git
+cd darswin
 ```
 
 - Create a conda virtual environment and activate it:
 
 ```bash
-conda create -n swin python=3.7 -y
+conda create -n darswin python=3.7 -y
 conda activate darswin
 ```
 
